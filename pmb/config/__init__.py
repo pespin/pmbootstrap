@@ -77,7 +77,8 @@ config_keys = ["aports",
                "work",
                "boot_size",
                "extra_space",
-               "sudo_timer"]
+               "sudo_timer",
+               "qemu_redir_stdio"]
 
 # Config file/commandline default values
 # $WORK gets replaced with the actual value for args.work (which may be
@@ -118,7 +119,8 @@ defaults = {
     "work": os.path.expanduser("~") + "/.local/var/pmbootstrap",
     "boot_size": "256",
     "extra_space": "0",
-    "sudo_timer": False
+    "sudo_timer": False,
+    "qemu_redir_stdio": False
 }
 
 
