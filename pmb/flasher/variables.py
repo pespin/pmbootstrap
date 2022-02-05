@@ -19,6 +19,14 @@ def variables(args, flavor, method):
             or None
         _partition_dtbo = args.deviceinfo["flash_fastboot_partition_dtbo"]\
             or None
+    # These default may change when we make a new partition table for the pinenote
+    elif method.startswith("rkdeveloptool"):
+        _partition_kernel = args.deviceinfo["flash_rk_partition_kernel"]\
+            or "cache"
+        _partition_system = args.deviceinfo["flash_rk_partition_system"]\
+            or "userdata"
+        _partition_vbmeta = None
+        _partition_dtbo = None
     else:
         _partition_kernel = args.deviceinfo["flash_heimdall_partition_kernel"]\
             or "KERNEL"
